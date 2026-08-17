@@ -37,8 +37,9 @@
     #hero { position:relative; min-height:90vh; overflow:hidden; background:#000; }
     .hero-bg { position:absolute; inset:0; z-index:0; background:url(assets/hero-bg.jpg) center/cover no-repeat; filter:saturate(1.1) contrast(1.03) brightness(.94); }
     .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 42%,rgba(0,0,0,.1) 68%),radial-gradient(ellipse 620px 500px at 82% 30%,rgba(249,115,22,.22),transparent 62%); }
-    .hero-photo { position:absolute; z-index:1; right:0; bottom:0; width:auto; max-width:calc(100% - 780px); height:clamp(380px,74vh,740px); object-fit:contain; object-position:bottom right; filter:saturate(1.12) contrast(1.02) brightness(1.01); }
+    .hero-photo { position:absolute; z-index:1; right:0; bottom:0; width:auto; max-width:calc(100% - 780px); height:clamp(380px,74vh,740px); object-fit:contain; object-position:bottom right; filter:saturate(1.12) contrast(1.02) brightness(1.01); clip-path:inset(0 0 0 18%); }
     .hero-mobile-photo { display:none; }
+    .hero-visual { display:none; }
     .hero-top { position:absolute; z-index:3; inset:0 0 auto; border-bottom:1px solid rgba(255,255,255,.08); background:rgba(8,8,8,.4); -webkit-backdrop-filter:blur(16px) saturate(140%); backdrop-filter:blur(16px) saturate(140%); }
     .hero-top-inner { max-width:1400px; min-height:80px; margin:0 auto; padding:18px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
     .hero-logo { height:26px; width:auto; opacity:.92; }
@@ -81,14 +82,15 @@
 
     @media (max-width:1000px) {
       #hero { min-height:0; }
-      .hero-photo { display:none; }
-      .hero-bg { background-position:78% 55%; filter:saturate(1.25) contrast(1.08) brightness(1.05); }
-      .hero-overlay { background:linear-gradient(180deg,rgba(6,5,4,.05) 0%,rgba(7,6,5,.32) 42%,rgba(8,6,5,.9) 74%,#08060a 94%),radial-gradient(ellipse 480px 380px at 50% 0%,rgba(249,115,22,.3),transparent 62%); }
-      .hero-mobile-photo { position:relative; z-index:1; display:block; width:88%; max-width:380px; height:auto; margin:88px auto 4px; filter:saturate(1.12) contrast(1.03) brightness(1.02) drop-shadow(0 18px 30px rgba(0,0,0,.5)); -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 74%,transparent); mask-image:linear-gradient(180deg,#000 0%,#000 74%,transparent); }
+      .hero-bg, .hero-photo { display:none; }
+      .hero-overlay { background:linear-gradient(180deg,rgba(6,5,4,.05) 0%,rgba(7,6,5,.4) 55%,rgba(8,6,5,.9) 82%,#08060a 96%),radial-gradient(ellipse 480px 380px at 50% 0%,rgba(249,115,22,.24),transparent 62%); }
+      .hero-visual { display:block; position:relative; width:100%; max-width:460px; aspect-ratio:1271/882; margin:70px 0 6px auto; -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 66%,transparent 96%); mask-image:linear-gradient(180deg,#000 0%,#000 66%,transparent 96%); }
+      .hero-visual-bg { position:absolute; inset:0; background:url(assets/hero-bg.jpg) center/contain no-repeat; filter:saturate(1.3) contrast(1.1) brightness(1.15); }
+      .hero-visual .hero-mobile-photo { position:absolute; inset:0; z-index:1; display:block; width:100%; height:100%; object-fit:contain; object-position:bottom right; clip-path:inset(0 0 0 20%); filter:saturate(1.12) contrast(1.03) brightness(1.02) drop-shadow(0 14px 26px rgba(0,0,0,.45)); }
       .hero-row { min-height:0; padding:0 24px 44px; flex-direction:column; justify-content:flex-end; text-align:center; }
       .hero-content { max-width:100%; }
-      .hero-content h1 { max-width:100%; font-size:21px; font-weight:700; line-height:1.3; text-wrap:wrap; }
-      .hero-content .sub { max-width:100%; font-size:13.5px; line-height:1.55; margin-bottom:24px; }
+      .hero-content h1 { max-width:100%; font-size:22px; font-weight:700; line-height:1.32; text-wrap:pretty; }
+      .hero-content .sub { max-width:100%; font-size:13.5px; line-height:1.55; margin-bottom:24px; text-wrap:pretty; }
       .hero-note { font-size:12.5px; line-height:1.5; }
       .hero-top-inner { min-height:0; padding:10px 16px 12px; flex-direction:column; justify-content:center; align-items:center; gap:8px; }
       .hero-logo { height:20px; }
@@ -125,7 +127,10 @@
         <img class="hero-logo" src="assets/logo.png" alt="Arrive In Digital">
         <div class="hero-date" aria-live="polite"><span class="hero-date__dot" aria-hidden="true"></span><span id="next-live-short">Próxima aula: terça, 12h</span></div>
       </div></div>
-      <img class="hero-mobile-photo" src="assets/hero-experts.png" alt="Erik Tafuri e Miguel Maulim, da Arrive In Digital">
+      <div class="hero-visual">
+        <div class="hero-visual-bg" aria-hidden="true"></div>
+        <img class="hero-mobile-photo" src="assets/hero-experts.png" alt="Erik Tafuri e Miguel Maulim, da Arrive In Digital">
+      </div>
       <div class="hero-row"><div class="hero-content">
         <h1 id="hero-title">Aprenda como os profissionais que vendem milhões em imóveis <span class="grad-text">usam a internet para vender todos os meses.</span></h1>
         <p class="sub">Aulas práticas sobre conteúdo e anúncios, baseadas na experiência de quem aplicou marketing no dia a dia de uma imobiliária de <strong>+R$ 200 milhões em VGV anual</strong>.</p>
