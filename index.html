@@ -33,12 +33,6 @@
     .btn:hover { transform:translateY(-2px); box-shadow:0 14px 34px rgba(249,115,22,.5); }
     .btn svg { width:17px; height:17px; flex:none; }
 
-    /* sprite de ícones decorativos (chave, casa, janela) — desenhados com formas simples, sem paths à mão */
-    .deco-sprite { position:absolute; width:0; height:0; overflow:hidden; }
-    .deco { position:absolute; z-index:0; display:block; color:var(--orange); opacity:.16; filter:blur(7px); pointer-events:none; }
-    .deco--soft { filter:blur(14px); opacity:.12; }
-    .deco--pink { color:var(--pink); }
-
     /* ============ HERO — fundo e pessoas em camadas separadas ============ */
     #hero { position:relative; min-height:90vh; overflow:hidden; background:#000; }
     .hero-bg { position:absolute; inset:0; z-index:0; background:url(assets/hero-bg.jpg) center/cover no-repeat; filter:saturate(1.1) contrast(1.03) brightness(.94); }
@@ -56,23 +50,29 @@
     .hero-content .sub { margin-bottom:32px; color:rgba(255,255,255,.72); font-size:16px; }
     .hero-note { margin-top:14px; color:rgba(255,255,255,.5); font-size:12px; }
 
-    .proof { position:relative; padding:64px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:#050505; text-align:center; overflow:hidden; }
-    .proof p { position:relative; z-index:1; max-width:640px; margin:0 auto; color:var(--text2); font-size:17px; line-height:1.6; }
-    .proof strong { color:#fff; }
+    .proof { position:relative; padding:72px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:#050505; overflow:hidden; }
+    .proof-inner { display:flex; align-items:baseline; justify-content:center; gap:18px; flex-wrap:wrap; text-align:left; }
+    .proof-figure { font-size:clamp(2.2rem,5vw,3.2rem); font-weight:900; letter-spacing:-.04em; white-space:nowrap; }
+    .proof p { max-width:360px; margin:0; color:var(--text2); font-size:15px; line-height:1.55; }
 
-    /* ============ O que você vai construir — 3 cards com ícone, sem mockup pesado ============ */
-    .pillars { position:relative; padding:96px 0; overflow:hidden; }
-    .pillars .head-center { position:relative; z-index:1; max-width:640px; margin:0 auto 48px; text-align:center; }
+    /* ============ O que você vai construir — foto real + lista editorial, sem cards repetidos ============ */
+    .pillars { position:relative; padding:100px 0; overflow:hidden; }
+    .pillars .head-center { max-width:640px; margin:0 auto 56px; text-align:center; }
     .pillars .head-center h2 { font-size:clamp(1.7rem,3vw,2.3rem); font-weight:900; letter-spacing:-.03em; line-height:1.2; }
-    .pillars .head-center p { margin-top:12px; color:var(--text2); font-size:15px; }
-    .pillars-row { position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-    .pillar { padding:28px 24px; border:1px solid var(--border); border-radius:16px; background:#0e0e0e; }
-    .pillar-icon { display:grid; place-items:center; width:34px; height:34px; margin-bottom:16px; border-radius:9px; background:var(--orange); color:#fff; }
-    .pillar-icon svg { width:16px; height:16px; }
-    .pillar h3 { font-size:17px; font-weight:700; margin-bottom:8px; }
-    .pillar p { font-size:13.5px; line-height:1.6; color:var(--text2); }
+    .pillars-split { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:48px; align-items:center; }
+    .pillars-photo { border-radius:18px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.4); }
+    .pillars-photo img { display:block; width:100%; height:100%; object-fit:cover; aspect-ratio:3/4; filter:saturate(1.08) contrast(1.03); }
+    .pillars-list { display:flex; flex-direction:column; }
+    .pillar-row { display:flex; gap:20px; padding:26px 0; border-bottom:1px solid var(--border); }
+    .pillar-row:first-child { padding-top:0; }
+    .pillar-row:last-child { border-bottom:0; }
+    .pillar-num { flex:none; font-size:15px; font-weight:800; color:var(--orange); letter-spacing:.02em; padding-top:2px; }
+    .pillar-row h3 { font-size:19px; font-weight:700; margin-bottom:6px; }
+    .pillar-row p { font-size:14px; line-height:1.6; color:var(--text2); }
 
-    .closing { position:relative; padding:96px 0; overflow:hidden; background:radial-gradient(ellipse 680px 380px at 12% 15%,rgba(249,115,22,.22),transparent 68%),radial-gradient(ellipse 560px 340px at 92% 85%,rgba(234,88,12,.16),transparent 70%),#0a0a0a; }
+    .closing { position:relative; padding:96px 0; overflow:hidden; background:#0a0a0a; }
+    .closing-bg { position:absolute; inset:0; z-index:0; background:url(assets/property.jpg) center 62%/cover no-repeat; filter:blur(3px) saturate(1.05) brightness(.55); transform:scale(1.05); }
+    .closing::before { content:''; position:absolute; inset:0; z-index:0; background:linear-gradient(180deg,rgba(6,5,4,.92) 0%,rgba(10,8,6,.8) 45%,rgba(10,8,6,.94) 100%),radial-gradient(ellipse 680px 380px at 12% 15%,rgba(249,115,22,.28),transparent 68%); }
     .closing-box { position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:32px; padding:clamp(28px,5vw,52px); border:1px solid rgba(255,255,255,.12); border-radius:20px; background:rgba(20,20,20,.72); }
     .closing-box h2 { max-width:16ch; margin-bottom:10px; font-size:clamp(1.7rem,3.2vw,2.4rem); font-weight:900; letter-spacing:-.04em; line-height:1.15; }
     .closing-box p { max-width:50ch; color:var(--text2); font-size:14.5px; }
@@ -96,43 +96,29 @@
       .hero-logo { height:20px; }
       .hero-date { font-size:12px; padding:8px 14px; }
       .pillars { padding:64px 0; }
-      .pillars-row { grid-template-columns:1fr; }
+      .pillars .head-center { margin-bottom:36px; }
+      .pillars-split { grid-template-columns:1fr; gap:28px; }
+      .pillars-photo img { aspect-ratio:16/10; }
+      .pillar-row { padding:20px 0; }
       .closing { padding:64px 0; }
       .closing-box { grid-template-columns:1fr; text-align:center; }
       .closing-action { min-width:0; margin:0 auto; }
-      .proof { padding:44px 0; }
-      .proof p { font-size:14.5px; }
-      .deco { display:none; }
+      .proof { padding:40px 0; }
+      .proof-inner { flex-direction:column; align-items:center; text-align:center; gap:8px; }
+      .proof p { font-size:14px; max-width:320px; }
+    }
+    @media (max-width:360px) {
+      .hero-top-inner { padding:12px 14px; gap:12px; }
+      .hero-logo { height:18px; }
+      .hero-date { font-size:11px; padding:7px 11px; gap:6px; }
     }
   </style>
 </head>
 <body>
-  <svg class="deco-sprite" aria-hidden="true">
-    <symbol id="ic-key" viewBox="0 0 120 60">
-      <circle cx="22" cy="30" r="17" fill="none" stroke="currentColor" stroke-width="9"/>
-      <rect x="37" y="25.5" width="62" height="9" fill="currentColor"/>
-      <rect x="80" y="34.5" width="8" height="15" fill="currentColor"/>
-      <rect x="94" y="34.5" width="8" height="20" fill="currentColor"/>
-    </symbol>
-    <symbol id="ic-house" viewBox="0 0 100 100">
-      <polygon points="50,6 94,44 82,44 82,92 18,92 18,44 6,44" fill="currentColor"/>
-    </symbol>
-    <symbol id="ic-window" viewBox="0 0 100 100">
-      <rect x="10" y="10" width="80" height="80" fill="none" stroke="currentColor" stroke-width="8"/>
-      <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" stroke-width="8"/>
-      <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="8"/>
-    </symbol>
-    <symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></symbol>
-    <symbol id="ic-content" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="2"/><line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="2"/><line x1="8" y1="17" x2="12" y2="17" stroke="currentColor" stroke-width="2"/></symbol>
-    <symbol id="ic-ad" viewBox="0 0 24 24"><path d="M3 11l18-7v16l-18-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 11v6a2 2 0 0 0 2 2h2v-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
-  </svg>
-
   <main>
     <section id="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
-      <svg class="deco" style="width:210px;height:105px;top:8%;left:2%;transform:rotate(-18deg);" aria-hidden="true"><use href="#ic-key"/></svg>
-      <svg class="deco deco--soft deco--pink" style="width:150px;height:150px;bottom:6%;left:8%;transform:rotate(10deg);" aria-hidden="true"><use href="#ic-house"/></svg>
       <div class="hero-top"><div class="hero-top-inner">
         <img class="hero-logo" src="assets/logo.png" alt="Arrive In Digital">
         <div class="hero-date" aria-live="polite"><span class="hero-date__dot" aria-hidden="true"></span><span id="next-live-short">Próxima aula: terça, 12h</span></div>
@@ -149,29 +135,40 @@
     </section>
 
     <section class="proof">
-      <svg class="deco deco--soft" style="width:120px;height:120px;top:-20px;right:6%;transform:rotate(8deg);" aria-hidden="true"><use href="#ic-window"/></svg>
-      <div class="container">
-        <p>Estratégias utilizadas em operações que movimentam mais de <strong>R$ 200 milhões em VGV por ano.</strong></p>
+      <div class="container proof-inner">
+        <span class="proof-figure grad-text">R$ 200 mi</span>
+        <p>em VGV por ano é o que movimentam as operações de onde vêm as estratégias que você vai ver na aula.</p>
       </div>
     </section>
 
     <section class="pillars" id="pillars">
-      <svg class="deco deco--soft" style="width:180px;height:90px;top:0;right:0;transform:rotate(-6deg);" aria-hidden="true"><use href="#ic-key"/></svg>
       <div class="container">
         <header class="head-center">
           <span class="eyebrow">Na aula</span>
           <h2>O que você vai construir para atrair compradores qualificados todos os dias.</h2>
         </header>
-        <div class="pillars-row">
-          <article class="pillar"><span class="pillar-icon"><svg><use href="#ic-target"/></svg></span><h3>Posicionamento</h3><p>Como se tornar referência no mercado e ser lembrado pelos clientes certos.</p></article>
-          <article class="pillar"><span class="pillar-icon"><svg><use href="#ic-content"/></svg></span><h3>Conteúdo</h3><p>Como construir autoridade e criar conexão antes do primeiro contato com o cliente.</p></article>
-          <article class="pillar"><span class="pillar-icon"><svg><use href="#ic-ad"/></svg></span><h3>Anúncios</h3><p>Como usar a internet para ampliar seu alcance e gerar novas oportunidades de venda.</p></article>
+        <div class="pillars-split">
+          <figure class="pillars-photo"><img src="assets/property.jpg" alt="Imóvel de alto padrão"></figure>
+          <div class="pillars-list">
+            <article class="pillar-row">
+              <span class="pillar-num">01</span>
+              <div><h3>Posicionamento</h3><p>Como se tornar referência no mercado e ser lembrado pelos clientes certos.</p></div>
+            </article>
+            <article class="pillar-row">
+              <span class="pillar-num">02</span>
+              <div><h3>Conteúdo</h3><p>Como construir autoridade e criar conexão antes do primeiro contato com o cliente.</p></div>
+            </article>
+            <article class="pillar-row">
+              <span class="pillar-num">03</span>
+              <div><h3>Anúncios</h3><p>Como usar a internet para ampliar seu alcance e gerar novas oportunidades de venda.</p></div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="closing" id="closing">
-      <svg class="deco deco--soft" style="width:220px;height:220px;bottom:-10%;right:4%;transform:rotate(12deg);" aria-hidden="true"><use href="#ic-house"/></svg>
+      <div class="closing-bg" aria-hidden="true"></div>
       <div class="container"><div class="closing-box">
         <div><h2>Participe da próxima aula ao vivo e gratuita.</h2><p id="final-schedule">Terça ou quinta, às 12h. Entre no grupo para receber o acesso.</p></div>
         <div class="closing-action"><a class="btn" href="obrigado/">QUERO PARTICIPAR DA AULA</a><small>Grupo silencioso. Você receberá apenas os avisos e informações importantes sobre a aula.</small></div>
@@ -206,4 +203,3 @@
   </script>
 </body>
 </html>
-<!-- redeploy trigger 1786989586 -->
