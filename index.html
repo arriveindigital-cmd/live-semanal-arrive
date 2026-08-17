@@ -65,6 +65,26 @@
     .learn-item h3 { font-size:13.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:#18131f; margin-bottom:12px; }
     .learn-item p { font-size:14.5px; line-height:1.65; color:rgba(24,19,31,.62); }
 
+    /* ============ Por que aprender comigo — autoridade com mockup de dashboard ============ */
+    .why { position:relative; padding:100px 0; background:#000; overflow:hidden; }
+    .why::before { content:''; position:absolute; inset:0; z-index:0; background:radial-gradient(ellipse 560px 420px at 85% 15%,rgba(249,115,22,.14),transparent 65%); }
+    .why-grid { position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:56px; align-items:center; }
+    .why-text .eyebrow { color:var(--orange); margin-bottom:14px; }
+    .why-text h2 { font-size:clamp(1.7rem,3vw,2.3rem); font-weight:900; letter-spacing:-.03em; line-height:1.2; margin-bottom:18px; }
+    .why-text p { font-size:16px; line-height:1.7; color:var(--text2); }
+    .why-text p strong { color:#fff; }
+    .dash { border-radius:18px; overflow:hidden; background:#111; border:1px solid var(--border); box-shadow:0 30px 70px rgba(0,0,0,.45); }
+    .dash-bar { display:flex; align-items:center; gap:6px; padding:12px 16px; background:#161616; border-bottom:1px solid var(--border); }
+    .dash-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.15); }
+    .dash-body { padding:32px 28px; }
+    .dash-label { font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--text3); margin-bottom:8px; }
+    .dash-figure { font-size:clamp(2.2rem,4vw,3rem); font-weight:900; letter-spacing:-.03em; margin-bottom:24px; }
+    .dash-chart { display:flex; align-items:flex-end; gap:8px; height:100px; margin-bottom:20px; }
+    .dash-chart i { flex:1; border-radius:5px 5px 0 0; background:linear-gradient(180deg,var(--orange2),var(--ember)); opacity:.55; }
+    .dash-chart i:last-child { opacity:1; box-shadow:0 8px 18px rgba(249,115,22,.35); }
+    .dash-foot { padding-top:18px; border-top:1px solid var(--border); font-size:12.5px; line-height:1.5; color:var(--text2); }
+    .dash-foot b { color:#fff; }
+
     .closing { position:relative; padding:96px 0; overflow:hidden; background:#0a0a0a; }
     .closing-bg { position:absolute; inset:0; z-index:0; background:url(assets/property.jpg) center 62%/cover no-repeat; filter:blur(3px) saturate(1.05) brightness(.55); transform:scale(1.05); }
     .closing::before { content:''; position:absolute; inset:0; z-index:0; background:linear-gradient(180deg,rgba(6,5,4,.92) 0%,rgba(10,8,6,.8) 45%,rgba(10,8,6,.94) 100%),radial-gradient(ellipse 680px 380px at 12% 15%,rgba(249,115,22,.28),transparent 68%); }
@@ -81,13 +101,13 @@
       #hero { min-height:0; }
       .hero-bg, .hero-photo { display:none; }
       .hero-overlay { background:linear-gradient(180deg,rgba(6,5,4,.05) 0%,rgba(7,6,5,.4) 55%,rgba(8,6,5,.9) 82%,#08060a 96%),radial-gradient(ellipse 480px 380px at 50% 0%,rgba(249,115,22,.24),transparent 62%); }
-      .hero-visual { display:block; position:relative; width:100%; max-width:520px; aspect-ratio:1271/1300; margin:12px 0 10px auto; -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 66%,transparent 96%); mask-image:linear-gradient(180deg,#000 0%,#000 66%,transparent 96%); }
+      .hero-visual { display:block; position:relative; width:100%; max-width:520px; aspect-ratio:1271/1200; margin:12px 0 0 auto; -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 80%,transparent 98%); mask-image:linear-gradient(180deg,#000 0%,#000 80%,transparent 98%); }
       .hero-visual-bg { position:absolute; inset:0; background:url(assets/hero-bg.jpg) 70% 35%/cover no-repeat; filter:saturate(1.25) contrast(1.08) brightness(1.05); }
-      .hero-visual .hero-mobile-photo { position:absolute; inset:0; z-index:1; display:block; width:100%; height:100%; object-fit:contain; object-position:bottom; filter:saturate(1.12) contrast(1.03) brightness(1.02) drop-shadow(0 14px 26px rgba(0,0,0,.45)); }
+      .hero-visual .hero-mobile-photo { position:absolute; inset:0; z-index:1; display:block; width:100%; height:100%; object-fit:contain; object-position:bottom; filter:saturate(1.16) contrast(1.06) brightness(1.16) drop-shadow(0 14px 26px rgba(0,0,0,.45)); }
       .hero-visual::after { content:''; position:absolute; inset:0; z-index:2; background:linear-gradient(90deg,rgba(6,5,8,.8) 0%,rgba(6,5,8,.35) 16%,transparent 30%); pointer-events:none; }
       .hero-row { min-height:0; padding:0 24px 44px; flex-direction:column; justify-content:flex-end; text-align:center; }
       .hero-content { max-width:100%; }
-      .hero-content h1 { max-width:100%; margin-bottom:28px; font-size:22px; font-weight:700; line-height:1.32; text-wrap:balance; }
+      .hero-content h1 { max-width:100%; margin-bottom:24px; font-size:22px; font-weight:700; line-height:1.32; text-wrap:balance; }
       .hero-content .sub { max-width:100%; font-size:13.5px; line-height:1.6; margin-bottom:30px; text-wrap:balance; }
       .hero-note { margin-top:18px; font-size:12.5px; line-height:1.5; }
       .hero-top-inner { min-height:0; padding:20px 16px 16px; flex-direction:column; justify-content:center; align-items:center; gap:10px; }
@@ -98,6 +118,12 @@
       .learn .head-center h2 { font-size:22px; }
       .learn-grid { grid-template-columns:1fr; gap:16px; }
       .learn-item { padding:26px 24px; }
+      .why { padding:60px 0; }
+      .why-grid { grid-template-columns:1fr; gap:32px; }
+      .why-text h2 { font-size:24px; }
+      .why-text p { font-size:14.5px; }
+      .dash-body { padding:26px 22px; }
+      .dash-chart { height:80px; }
       .closing { padding:56px 0; }
       .closing-box { grid-template-columns:1fr; text-align:center; }
       .closing-box h2 { font-size:24px; }
@@ -127,7 +153,7 @@
         <img class="hero-mobile-photo" src="assets/hero-experts.png" alt="Erik Tafuri e Miguel Maulim, da Arrive In Digital">
       </div>
       <div class="hero-row"><div class="hero-content">
-        <h1 id="hero-title">Aprenda como os profissionais que vendem milhões em imóveis <span class="grad-text">usam a internet para vender todos os meses.</span></h1>
+        <h1 id="hero-title">Aprenda como os corretores que vendem milhões em imóveis <span class="grad-text">usam a internet para vender todos os meses.</span></h1>
         <p class="sub">Aulas práticas sobre conteúdo e anúncios, baseadas na experiência de quem aplicou marketing no dia a dia de uma imobiliária de <strong>+R$ 200 milhões em VGV anual</strong>.</p>
         <a class="btn" href="obrigado/">QUERO PARTICIPAR DA AULA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <p class="hero-note">Próxima aula: <strong id="next-live-full">terça-feira, às 12h</strong> · grupo silencioso, usado apenas para avisos.</p>
@@ -157,6 +183,27 @@
             <h3>Gerar oportunidades</h3>
             <p>Como usar anúncios para qualificar o público, gerar leads ideais e escalar a geração de oportunidades.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="container why-grid">
+        <div class="dash">
+          <div class="dash-bar"><span class="dash-dot"></span><span class="dash-dot"></span><span class="dash-dot"></span></div>
+          <div class="dash-body">
+            <div class="dash-label">VGV anual gerado</div>
+            <div class="dash-figure grad-text">+R$ 200 mi</div>
+            <div class="dash-chart" aria-hidden="true">
+              <i style="height:38%"></i><i style="height:52%"></i><i style="height:46%"></i><i style="height:64%"></i><i style="height:58%"></i><i style="height:80%"></i><i style="height:100%"></i>
+            </div>
+            <div class="dash-foot">Marketing aplicado no dia a dia de <b>uma imobiliária real</b>, não em teoria.</div>
+          </div>
+        </div>
+        <div class="why-text">
+          <span class="eyebrow">Quem ensina</span>
+          <h2>Por que aprender comigo?</h2>
+          <p>Porque as estratégias que eu vou ensinar vêm da experiência que eu adquiri aplicando, no dia a dia, o marketing de uma imobiliária de <strong>+R$ 200 milhões em VGV anual</strong>.</p>
         </div>
       </div>
     </section>
