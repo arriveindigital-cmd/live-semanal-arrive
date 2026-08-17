@@ -127,7 +127,7 @@
       .hero-content h1 { max-width:100%; margin-bottom:24px; font-size:22px; font-weight:700; line-height:1.32; text-wrap:balance; }
       .hero-content .sub { max-width:100%; font-size:13.5px; line-height:1.6; margin-bottom:30px; text-wrap:balance; }
       .hero-note { margin-top:18px; font-size:12.5px; line-height:1.5; }
-      .hero-top-inner { min-height:0; padding:20px 16px 16px; flex-direction:column; justify-content:center; align-items:center; gap:10px; }
+      .hero-top-inner { min-height:0; padding:14px 16px; }
       .hero-logo { height:20px; }
       .hero-date { font-size:12px; padding:8px 14px; }
       .learn { padding:56px 0; }
@@ -240,6 +240,10 @@
       function wallClock(date) { return new Date(date.toLocaleString('en-US', { timeZone: timeZone })); }
       function nextLiveDate(now) {
         var saoNow = wallClock(now);
+        var override = new Date(saoNow);
+        override.setFullYear(2026, 7, 20);
+        override.setHours(12, 0, 0, 0);
+        if (override.getTime() > saoNow.getTime()) return new Date(now.getTime() + override.getTime() - saoNow.getTime());
         for (var addDays = 0; addDays <= 7; addDays += 1) {
           var candidate = new Date(saoNow);
           candidate.setDate(saoNow.getDate() + addDays);
