@@ -46,14 +46,11 @@
     .hero-date__dot { width:7px; height:7px; border-radius:50%; background:var(--orange); box-shadow:0 0 16px rgba(249,115,22,.75); }
     .hero-row { position:relative; z-index:2; max-width:1400px; min-height:90vh; margin:0 auto; padding:130px 40px 70px; display:flex; align-items:center; }
     .hero-content { max-width:600px; }
-    .hero-content h1 { margin:16px 0 20px; font-size:36px; font-weight:800; letter-spacing:-.035em; line-height:1.15; text-wrap:balance; }
-    .hero-content .sub { margin-bottom:32px; color:rgba(255,255,255,.72); font-size:16px; }
+    .hero-content h1 { margin:0 0 22px; font-size:36px; font-weight:800; letter-spacing:-.035em; line-height:1.15; text-wrap:balance; }
+    .hero-content .sub { max-width:520px; margin-bottom:32px; color:rgba(255,255,255,.72); font-size:16px; line-height:1.6; }
+    .hero-content .sub strong { color:#fff; }
     .hero-note { margin-top:14px; color:rgba(255,255,255,.5); font-size:12px; }
-
-    .proof { position:relative; padding:72px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:#050505; overflow:hidden; }
-    .proof-inner { display:flex; align-items:baseline; justify-content:center; gap:18px; flex-wrap:wrap; text-align:left; }
-    .proof-figure { font-size:clamp(2.2rem,5vw,3.2rem); font-weight:900; letter-spacing:-.04em; white-space:nowrap; }
-    .proof p { max-width:360px; margin:0; color:var(--text2); font-size:15px; line-height:1.55; }
+    .hero-note strong { color:rgba(255,255,255,.75); font-weight:700; }
 
     /* ============ O que você vai construir — foto real + lista editorial, sem cards repetidos ============ */
     .pillars { position:relative; padding:100px 0; overflow:hidden; }
@@ -103,9 +100,6 @@
       .closing { padding:64px 0; }
       .closing-box { grid-template-columns:1fr; text-align:center; }
       .closing-action { min-width:0; margin:0 auto; }
-      .proof { padding:40px 0; }
-      .proof-inner { flex-direction:column; align-items:center; text-align:center; gap:8px; }
-      .proof p { font-size:14px; max-width:320px; }
     }
     @media (max-width:360px) {
       .hero-top-inner { padding:12px 14px; gap:12px; }
@@ -125,20 +119,12 @@
       </div></div>
       <img class="hero-mobile-photo" src="assets/hero-experts.png" alt="Erik Tafuri e Miguel Maulim, da Arrive In Digital">
       <div class="hero-row"><div class="hero-content">
-        <span class="eyebrow">Aula ao vivo e gratuita</span>
-        <h1 id="hero-title">Aprenda as estratégias que os maiores profissionais do mercado imobiliário usam para <span class="grad-text">vender mais todos os meses com a internet.</span></h1>
-        <p class="sub">Entre no grupo para participar da próxima aula ao vivo e gratuita — <strong id="next-live-full">terça-feira, às 12h</strong>.</p>
+        <h1 id="hero-title">Aprenda as estratégias que os maiores profissionais do mercado imobiliário usam para <span class="grad-text">vender imóveis todos os meses com a internet.</span></h1>
+        <p class="sub">Aulas ao vivo e gratuitas sobre conteúdo para atrair compradores e anúncios para geração de leads, baseadas na experiência prática de quem aplicou marketing no dia a dia de uma imobiliária que chegou a <strong>+R$ 200 milhões em VGV anual</strong>.</p>
         <a class="btn" href="obrigado/">QUERO PARTICIPAR DA AULA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <p class="hero-note">Grupo silencioso, usado apenas para avisos e atualizações da aula.</p>
+        <p class="hero-note">Próxima aula: <strong id="next-live-full">terça-feira, às 12h</strong> · grupo silencioso, usado apenas para avisos.</p>
       </div></div>
       <img class="hero-photo" src="assets/hero-experts.png" alt="Erik Tafuri e Miguel Maulim, da Arrive In Digital">
-    </section>
-
-    <section class="proof">
-      <div class="container proof-inner">
-        <span class="proof-figure grad-text">R$ 200 mi</span>
-        <p>em VGV por ano é o que movimentam as operações de onde vêm as estratégias que você vai ver na aula.</p>
-      </div>
     </section>
 
     <section class="pillars" id="pillars">
